@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:38:10 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/11 15:41:58 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/11 16:05:25 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class	Contact
 {
 	public:
-		void				set_firstname(std::string &_firstname);
+		void				set_firstname(const std::string &_firstname);
 		void				set_lastname(const std::string &_lastname);
 		void				set_nickname(const std::string &_nickname);
 		void				set_phone(const std::string &_number);
