@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:22 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 18:41:17 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:14:44 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,17 @@ void	PhoneBook::add_contact(std::string fields[5])
 		(this->_size)++;
 }
 
-void	PhoneBook::display() const
+int	PhoneBook::get_size() const
+{
+	return (this->_size);
+}
+
+void	PhoneBook::display_phonebook() const
 {
 	int	i;
 
 	i = -1;
+	std::cout << "\033[1;32m";
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
@@ -62,7 +68,19 @@ void	PhoneBook::display() const
 		std::cout << "|";
 		my_print(this->_contacts[i].get_nickname());
 		std::cout << "|";
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "\033[0m";
+}
+
+void	PhoneBook::display_contact(int index) const
+{
+	std::cout << "\033[1;32m";
+	std::cout << "First name: " << this->_contacts[index].get_firstname() << std::endl;
+	std::cout << "Last name: " << this->_contacts[index].get_lastname() << std::endl;
+	std::cout << "Nickname: " << this->_contacts[index].get_nickname() << std::endl;
+	std::cout << "Phone number: " << this->_contacts[index].get_phone() << std::endl;
+	std::cout << "Darkest secret: " << this->_contacts[index].get_secret() << std::endl;
+	std::cout << "\033[0m";
 }

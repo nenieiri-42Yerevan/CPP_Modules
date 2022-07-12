@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:35:31 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 16:40:20 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:16:33 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,14 @@ static int	is_valid(const std::string &str, int elem, int &i)
 		check_errors(str, elem, error);
 		if (error > 0)
 		{
+			std::cout << "\033[1;31m";
 			if (error == 1)
 				std::cout << "The field can't be less than 2 non blank characters.";
 			if (error == 2)
 				std::cout << "Please input a valid number.";
 			if (error == 3)
 				std::cout << "You can use only [A-Z], [a-z] or [1-9] characters.";
+			std::cout << "\033[0m";
 			std::cout << std::endl;
 			return (0);
 		}
@@ -76,27 +78,37 @@ void	add_contact(std::string *fields)
 	i = 0;
 	while (is_valid(fields[0], 0, i) == 0)
 	{
+		std::cout << "\033[1;33m";
 		std::cout << "First name: ";
 		std::getline(std::cin, fields[0]);
+		std::cout << "\033[0m";
 	}
 	while (is_valid(fields[1], 1, i) == 0)
 	{
+		std::cout << "\033[1;33m";
 		std::cout << "Last name: ";
 		std::getline(std::cin, fields[1]);
+		std::cout << "\033[0m";
 	}
 	while (is_valid(fields[2], 2, i) == 0)
 	{
+		std::cout << "\033[1;33m";
 		std::cout << "Nickname: ";
 		std::getline(std::cin, fields[2]);
+		std::cout << "\033[0m";
 	}
 	while (is_valid(fields[3], 3, i) == 0)
 	{
+		std::cout << "\033[1;33m";
 		std::cout << "Phone number: ";
 		std::getline(std::cin, fields[3]);
+		std::cout << "\033[0m";
 	}
 	while (is_valid(fields[4], 4, i) == 0)
 	{
+		std::cout << "\033[1;33m";
 		std::cout << "Darkest secret: ";
 		std::getline(std::cin, fields[4]);
+		std::cout << "\033[0m";
 	}
 }
