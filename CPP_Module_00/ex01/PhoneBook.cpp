@@ -6,11 +6,30 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:22 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 15:36:27 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 18:41:17 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "PhoneBook.hpp"
+
+static void	my_print(std::string str)
+{
+	int	j;
+
+	if (str.length() > 10)
+	{
+		std::cout << str.substr(0, 9);
+		std::cout << '.';
+	}
+	else
+	{
+		j = 10 - str.length();
+		while (j-- > 0)
+			std::cout << " ";
+		std::cout << str;
+	}
+}
 
 void	PhoneBook::add_contact(std::string fields[5])
 {
@@ -22,4 +41,28 @@ void	PhoneBook::add_contact(std::string fields[5])
 	this->_insert_index = (this->_insert_index + 1) % 8;
 	if (this->_size < 8)
 		(this->_size)++;
+}
+
+void	PhoneBook::display() const
+{
+	int	i;
+
+	i = -1;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	while (++i < this->_size)
+	{
+		std::cout << "|         ";
+		std::cout << i;
+		std::cout << "|";
+		my_print(this->_contacts[i].get_firstname());
+		std::cout << "|";
+		my_print(this->_contacts[i].get_lastname());
+		std::cout << "|";
+		my_print(this->_contacts[i].get_nickname());
+		std::cout << "|";
+	}
+	std::cout << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
 }
