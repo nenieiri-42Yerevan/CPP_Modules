@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:39:31 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 20:21:57 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:24:20 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main()
 	while (42)
 	{
 		std::cout << "\033[1;33m";
-		std::cout << "Please choose one of the following commands:";
+		std::cout << "Please choose one of the following commands: ";
 		std::cout << "( ADD | SEARCH | EXIT )" << std::endl;
 		std::cout << "> ";
 		std::getline(std::cin, command);
