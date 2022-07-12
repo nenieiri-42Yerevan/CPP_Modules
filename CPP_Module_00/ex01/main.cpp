@@ -6,13 +6,13 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:39:31 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 13:43:41 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 16:16:01 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 static void	check_errors(const std::string &str, int elem, int &error)
 {
@@ -69,10 +69,9 @@ int	is_valid(const std::string &str, int elem, int &i)
 	return (0);
 }
 
-void	add_contact()
+void	add_contact(std::string *fields)
 {
 	int			i;
-	std::string	fields[5];
 
 	i = 0;
 	while (is_valid(fields[0], 0, i) == 0)
@@ -104,10 +103,18 @@ void	add_contact()
 
 int	main()
 {
+	PhoneBook	phonebook;
 	std::string	command;
+	std::string	fields[5];
 
 	std::getline(std::cin, command);
 	if (command == "ADD")
-		add_contact();
+	{
+		std::cout << "Enter contact information" << std::endl;
+		add_contact(fields);
+		phonebook.add_contact(fields);
+		std::cout << "Contact added successfully!" << std::endl;
+		std::cout << phonebook._contacts[0].get_firstname() << std::endl;
+	}
 	return (0);
 }

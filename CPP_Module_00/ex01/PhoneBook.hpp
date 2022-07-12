@@ -6,18 +6,24 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:07 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/11 16:13:00 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/12 16:17:17 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include "Contact.hpp"
+
 class	PhoneBook
 {
+	public:
+		PhoneBook()	{_size = 0; _insert_index = 0;}
+		void		add_contact(std::string fields[5]);
 	private:
-		Contact	_contacts[8];
-		int		_size;
-}
+		Contact		_contacts[8];
+		int			_size;
+		int			_insert_index;
+};
 
 #endif
