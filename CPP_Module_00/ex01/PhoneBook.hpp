@@ -6,13 +6,15 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:07 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/12 20:20:53 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:12:02 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include <string>
+# include <iostream>
 # include "Contact.hpp"
 
 class	PhoneBook
