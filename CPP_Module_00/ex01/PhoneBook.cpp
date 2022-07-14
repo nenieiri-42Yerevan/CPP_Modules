@@ -6,28 +6,27 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:22 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/13 14:12:06 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:55:41 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook()
+{
+	_size = 0;
+	_insert_index = 0;
+}
+
 static void	my_print(std::string str)
 {
-	int	j;
-
 	if (str.length() > 10)
 	{
 		std::cout << str.substr(0, 9);
 		std::cout << '.';
 	}
 	else
-	{
-		j = 10 - str.length();
-		while (j-- > 0)
-			std::cout << " ";
-		std::cout << str;
-	}
+		std::cout << std::setw(10) << str;
 }
 
 void	PhoneBook::add_contact(std::string fields[5])

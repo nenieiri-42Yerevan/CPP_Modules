@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:05:07 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/13 14:12:02 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:35:38 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 # include "Contact.hpp"
 
 class	PhoneBook
 {
 	public:
-		PhoneBook()	{_size = 0; _insert_index = 0;}
+		PhoneBook();
 		void		add_contact(std::string fields[5]);
 		void		display_phonebook() const;
 		void		display_contact(int index) const;
