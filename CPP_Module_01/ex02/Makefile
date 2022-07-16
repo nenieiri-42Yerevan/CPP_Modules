@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/16 11:46:33 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/16 12:01:18 by vismaily         ###   ########.fr        #
+#    Created: 2022/07/16 13:23:02 by vismaily          #+#    #+#              #
+#    Updated: 2022/07/16 14:49:09 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= brainz
+NAME			= res
 
-SRCS			= $(wildcard *.cpp)
+SRCS			= main.cpp
 
-OBJS			= $(SRCS:.cpp=.o)
+OBJS			= main.o
 
 CC				= c++
 
