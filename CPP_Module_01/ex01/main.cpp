@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:30:19 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/16 11:13:00 by vismaily         ###   ########.fr       */
+/*   Created: 2022/07/16 11:17:53 by vismaily          #+#    #+#             */
+/*   Updated: 2022/07/16 11:44:33 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(const std::string &z_name)
-{
-	_name = z_name;
-	std::cout << _name << " has born." << std::endl;
-}
+Zombie	*zombieHorde(int n, std::string name);
 
-Zombie::~Zombie()
+int	main(void)
 {
-	std::cout << this->_name << " died." << std::endl;
-}
+	Zombie	*horde;
+	Zombie	zombie_1("A-ta-ta");
+	Zombie	*zombie_2 = new Zombie("B-ha-ha");
+	int		n;
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	n = 42;
+	horde = zombieHorde(n, "C-ga-ga");
+	zombie_1.announce();
+	zombie_2->announce();
+	for (int i = 0; i < n; i++)
+		horde[i].announce();
+	delete [] horde;
+	delete zombie_2;
+	return (0);
 }

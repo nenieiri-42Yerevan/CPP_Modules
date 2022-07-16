@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:30:19 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/16 11:13:00 by vismaily         ###   ########.fr       */
+/*   Created: 2022/07/16 10:53:48 by vismaily          #+#    #+#             */
+/*   Updated: 2022/07/16 11:44:35 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie::Zombie(const std::string &z_name)
-{
-	_name = z_name;
-	std::cout << _name << " has born." << std::endl;
-}
+# include <string>
+# include <iostream>
 
-Zombie::~Zombie()
+class	Zombie
 {
-	std::cout << this->_name << " died." << std::endl;
-}
+	public:
+		Zombie(void);
+		Zombie(const std::string &name);
+		~Zombie(void);
+	public:
+		void	set_name(const std::string &name);
+		void	announce(void) const;
+	private:
+		std::string	_name;
+};
 
-void	Zombie::announce(void) const
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif
