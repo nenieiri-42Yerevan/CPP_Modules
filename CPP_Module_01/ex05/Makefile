@@ -6,7 +6,7 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 11:55:26 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/17 12:00:54 by vismaily         ###   ########.fr        #
+#    Updated: 2022/07/17 14:54:50 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ clean:
 				@$(RM) $(OBJS)
 
 fclean:			clean
-				@$(RM) $(OBJS)
+				@$(RM) $(NAME)
 
 re:				fclean all
 
