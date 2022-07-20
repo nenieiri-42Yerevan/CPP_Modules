@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:08:02 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/20 18:36:50 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/20 20:30:25 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Fixed::Fixed(const int value)
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = (int)roundf(value * (1 << this->_point));
+	this->_value = roundf(value * (1 << this->_point));
 }
 
 float	Fixed::toFloat(void) const
