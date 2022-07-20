@@ -6,7 +6,7 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/20 15:04:03 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/20 15:07:43 by vismaily         ###   ########.fr        #
+#    Updated: 2022/07/20 18:16:53 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,6 @@ clean:
 fclean:			clean
 				@$(RM) $(NAME)
 
-re:				clean fclean
+re:				fclean all
 
 .PHONY:			all clean fclean re
