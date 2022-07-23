@@ -6,102 +6,55 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:17:54 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/21 20:15:49 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/23 12:10:44 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
+#include "Point.hpp"
+
+bool	bsp(const Point a, const Point b, const Point c, const Point point);
+
+static void	printData(const Point& a, const Point& b, const Point& c, const Point& p)
+{
+	std::cout << "Triangle vertices are ";
+	std::cout << "A(" << a.getFloatX() << ", " << a.getFloatY() << "), ";
+	std::cout << "B(" << b.getFloatX() << ", " << b.getFloatY() << "), ";
+	std::cout << "C(" << c.getFloatX() << ", " << c.getFloatY() << ")";
+	std::cout << std::endl <<"Point P is ";
+	std::cout << "P(" << p.getFloatX() << ", " << p.getFloatY() << ")\n";
+}
+
+static void	test(const Point& a, const Point& b, const Point& c, const Point& p)
+{
+	printData(a, b, c, p);
+	if (bsp(a, b, c, p))
+		std::cout << "Point P is in the triangle ABC!" << std::endl;
+	else
+		std::cout << "Point P is NOT in the triangle ABC!" << std::endl;
+}
 
 int	main(void)
 {
-	Fixed		a;
-	Fixed const	b(Fixed(5.05f) * Fixed(2));
+	Point	a1, b1(0, 4), c1(5, 0);
+	Point	p1(1, 1);
+	test(a1, b1, c1, p1);
+	std::cout << std::endl;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	Point	a2, b2(0, 4), c2(5, 0);
+	Point	p2(0, 0);
+	test(a2, b2, c2, p2);
+	std::cout << std::endl;
 
-	std::cout << b << std::endl;
+	Point	a3, b3(0, 4), c3(5, 0);
+	Point	p3(0, 1);
+	test(a3, b3, c3, p3);
+	std::cout << std::endl;
 
-	std::cout << Fixed::max(a, b) << std::endl << std::endl;
+	Point	a4(0.f, 0.f), b4(10.f, 30.f), c4(20.f, 0.f);
+	Point	p4(10.f, 15.f);
+	test(a4, b4, c4, p4);
+	std::cout << std::endl;
 
-	Fixed	z0(23.41f);
-	Fixed	z1(23.4f);
-	Fixed	z2(23.41f);
-	Fixed	z3(23.00f);
-	Fixed	z4(23);
-	Fixed	z5(0);
-	Fixed	z6(-1);
-	Fixed	z7(46.82f);
-
-	// >
-	std::cout << "Test 00: \">\"" << std::endl;
-	std::cout << z0 << " > " << z1 << " | res " << (z0 > z1) << std::endl;
-	std::cout << z0 << " > " << z2 << " | res " << (z0 > z2) << std::endl;
-	std::cout << z3 << " > " << z4 << " | res " << (z3 > z4) << std::endl;
-	std::cout << z6 << " > " << z5 << " | res " << (z6 > z5) << std::endl << std::endl;
-	
-	// <
-	std::cout << "Test 01: \"<\"" << std::endl;
-	std::cout << z0 << " < " << z1 << " | res " << (z0 < z1) << std::endl;
-	std::cout << z0 << " < " << z2 << " | res " << (z0 < z2) << std::endl;
-	std::cout << z3 << " < " << z4 << " | res " << (z3 < z4) << std::endl;
-	std::cout << z6 << " < " << z5 << " | res " << (z6 < z5) << std::endl << std::endl;
-
-	// >=
-	std::cout << "Test 02: \">=\"" << std::endl;
-	std::cout << z0 << " >= " << z1 << " | res " << (z0 >= z1) << std::endl;
-	std::cout << z0 << " >= " << z2 << " | res " << (z0 >= z2) << std::endl;
-	std::cout << z3 << " >= " << z4 << " | res " << (z3 >= z4) << std::endl;
-	std::cout << z6 << " >= " << z5 << " | res " << (z6 >= z5) << std::endl << std::endl;
-
-	// <=
-	std::cout << "Test 03: \"<=\"" << std::endl;
-	std::cout << z0 << " <= " << z1 << " | res " << (z0 <= z1) << std::endl;
-	std::cout << z0 << " <= " << z2 << " | res " << (z0 <= z2) << std::endl;
-	std::cout << z3 << " <= " << z4 << " | res " << (z3 <= z4) << std::endl;
-	std::cout << z6 << " <= " << z5 << " | res " << (z6 <= z5) << std::endl << std::endl;
-
-	// ==
-	std::cout << "Test 04: \"==\"" << std::endl;
-	std::cout << z0 << " == " << z1 << " | res " << (z0 == z1) << std::endl;
-	std::cout << z0 << " == " << z2 << " | res " << (z0 == z2) << std::endl;
-	std::cout << z3 << " == " << z4 << " | res " << (z3 == z4) << std::endl;
-	std::cout << z6 << " == " << z5 << " | res " << (z6 == z5) << std::endl << std::endl;
-
-	// !=
-	std::cout << "Test 05: \"!=\"" << std::endl;
-	std::cout << z0 << " != " << z1 << " | res " << (z0 != z1) << std::endl;
-	std::cout << z0 << " != " << z2 << " | res " << (z0 != z2) << std::endl;
-	std::cout << z3 << " != " << z4 << " | res " << (z3 != z4) << std::endl;
-	std::cout << z6 << " != " << z5 << " | res " << (z6 != z5) << std::endl << std::endl;
-
-	// +
-	std::cout << "Test 06: \"+\"" << std::endl;
-	std::cout << z0 << " + " << z1 << " = " << (z0 + z1) << std::endl;
-	std::cout << z6 << " + " << z2 << " = " << (z6 + z2) << std::endl;
-	std::cout << z6 << " + " << z5 << " = " << (z6 + z5) << std::endl << std::endl;
-
-	// -
-	std::cout << "Test 07: \"-\"" << std::endl;
-	std::cout << z0 << " - " << z1 << " = " << (z0 - z1) << std::endl;
-	std::cout << z6 << " - " << z2 << " = " << (z6 - z2) << std::endl;
-	std::cout << z5 << " - " << z6 << " = " << (z5 - z6) << std::endl << std::endl;
-
-	// *
-	std::cout << "Test 08: \"*\"" << std::endl;
-	std::cout << z0 << " * " << z1 << " = " << (z0 * z1) << std::endl;
-	std::cout << z6 << " * " << z2 << " = " << (z6 * z2) << std::endl;
-	std::cout << z5 << " * " << z6 << " = " << (z5 * z6) << std::endl << std::endl;
-
-	// /
-	std::cout << "Test 09: \"/\"" << std::endl;
-	std::cout << z7 << " / " << z0 << " = " << (z7 / z0) << std::endl;
-	std::cout << z2 << " / " << z6 << " = " << (z2 / z6) << std::endl;
-	std::cout << z5 << " / " << z6 << " = " << (z5 / z6) << std::endl << std::endl;
-	std::cout << z7 / z5 << std::endl;
 	return (0);
 }
