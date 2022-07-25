@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:28:00 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/24 16:27:41 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:27:33 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 /* Constructors and the Destructor */
 ClapTrap::ClapTrap(void)
 {
+	std::cout << COLOR_YELLOW_B;
+	std::cout << "ClapTrap ";
 	std::cout << COLOR_GREEN_B;
-	std::cout << "Default constructor has been called";
+	std::cout << "default constructor has been called";
 	std::cout << COLOR_END << std::endl;
 	_name = "Unname";
 	_hitPoints = 10;
@@ -51,7 +53,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ClapTrap ";
 	std::cout << COLOR_GREEN_B;
-	std::cout << "Copy constructor called.";
+	std::cout << "copy constructor has been called.";
 	std::cout << COLOR_END << std::endl;
 	*this = other;
 }

@@ -6,11 +6,11 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/24 10:45:04 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/24 10:51:41 by vismaily         ###   ########.fr        #
+#    Updated: 2022/07/25 16:12:51 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= claptrap
+NAME			= scaptrap
 
 SRCS			= $(wildcard *.cpp)
 
