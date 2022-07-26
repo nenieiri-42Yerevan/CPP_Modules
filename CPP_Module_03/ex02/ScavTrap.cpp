@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:54:13 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:02:16 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/26 13:00:24 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ScavTrap ";
 	std::cout << COLOR_GREEN_B;
-	std::cout << "default constructor has been called";
+	std::cout << "default constructor has been called.";
 	std::cout << COLOR_END << std::endl;
 }
 
