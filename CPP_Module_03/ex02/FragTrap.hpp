@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:19:12 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 12:25:35 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/26 13:15:05 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	FragTrap : public ClapTrap
 		~FragTrap(void);
 		FragTrap	&operator=(const FragTrap &other);
 	public:
-		void		highFivesGuys(void);
+		void		highFivesGuys(void) const;
 };
 
 #endif

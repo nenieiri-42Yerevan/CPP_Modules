@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:54:13 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:00:24 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/26 13:46:23 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 {
-	this->setName(other.getName());
-	this->setHitPoints(other.getHitPoints());
-	this->setEnergyPoints(other.getEnergyPoints());
-	this->setAttackDamage(other.getAttackDamage());
+	ClapTrap::operator=(other);
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ScavTrap " << this->getName();
 	std::cout << COLOR_GREEN_B;
