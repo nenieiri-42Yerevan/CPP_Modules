@@ -6,14 +6,14 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 10:52:03 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:51:05 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:26:01 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "ScavTrap.hpp"
 
-static void	print_block(ClapTrap &obj)
+static void	print_block(ScavTrap &obj)
 {
 	std::cout << COLOR_PURPLE_B;
 	std::cout << "+------ ScavTrap " << obj.getName();

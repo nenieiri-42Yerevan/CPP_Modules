@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:54:13 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:46:23 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:58:32 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ScavTrap ";
 	std::cout << COLOR_GREEN_B;

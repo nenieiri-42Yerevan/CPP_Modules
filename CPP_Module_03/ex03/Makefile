@@ -6,11 +6,11 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/24 10:45:04 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/26 12:14:19 by vismaily         ###   ########.fr        #
+#    Updated: 2022/07/27 13:50:07 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= fragtrap
+NAME			= diamondtrap
 
 SRCS			= $(wildcard *.cpp)
 

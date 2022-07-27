@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:28:00 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:04:27 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:40:00 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(void)
 	std::cout << COLOR_GREEN_B;
 	std::cout << "default constructor has been called.";
 	std::cout << COLOR_END << std::endl;
-	_name = "Unname";
+	_name = "Unnamed";
 	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;

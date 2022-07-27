@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:49:10 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/25 15:58:47 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:10:56 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap(void);

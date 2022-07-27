@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:19:05 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 13:44:21 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:10:36 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "FragTrap ";
 	std::cout << COLOR_GREEN_B;

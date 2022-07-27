@@ -6,14 +6,14 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 10:52:03 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/26 14:09:59 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 13:26:22 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "FragTrap.hpp"
 
-static void	print_block(ClapTrap &obj)
+static void	print_block(FragTrap &obj)
 {
 	std::cout << COLOR_PURPLE_B;
 	std::cout << "+------ FragTrap " << obj.getName();
