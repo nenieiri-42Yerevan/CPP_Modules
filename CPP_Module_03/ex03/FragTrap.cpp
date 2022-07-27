@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:19:05 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/27 12:59:23 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:07:30 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 FragTrap::FragTrap(void)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "FragTrap ";
 	std::cout << COLOR_GREEN_B;
@@ -35,11 +35,11 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "FragTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " created.";
 	std::cout << COLOR_END << std::endl;
@@ -49,7 +49,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &other)
 {
 	ClapTrap::operator=(other);
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "FragTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " cloned (assignment operator).";
 	std::cout << COLOR_END << std::endl;
@@ -60,7 +60,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &other)
 FragTrap::~FragTrap(void)
 {
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "FragTrap " << this->_name;
 	std::cout << COLOR_RED_B;
 	std::cout << " dead.";
 	std::cout << COLOR_END << std::endl;
@@ -69,7 +69,7 @@ FragTrap::~FragTrap(void)
 void	FragTrap::highFivesGuys(void) const
 {
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "FragTrap " << this->getName();
+	std::cout << "FragTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " High Five guys!";
 	std::cout << COLOR_END << std::endl;

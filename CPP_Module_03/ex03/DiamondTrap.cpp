@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 11:04:31 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/27 13:47:07 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:56:29 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ DiamondTrap::~DiamondTrap(void)
 void	DiamondTrap::whoAmI(void) const
 {
 	std::cout << COLOR_PURPLE_B;
-	std::cout << "My ClapTrap name is " << this->getName() << '.' << std::endl;
+	std::cout << "My ClapTrap name is " << this->ClapTrap::_name << '.';
+	std::cout << std::endl;
 	std::cout << "My DiamondTrap name is " << this->_name << '.';
 	std::cout << COLOR_END << std::endl;
 }
@@ -87,5 +88,5 @@ const std::string	&DiamondTrap::getNameDiamond(void) const
 void	DiamondTrap::setNameDiamond(const std::string &name)
 {
 	this->_name = name;
-	this->setName(name + "_clap_name");
+	this->ClapTrap::_name = name + "_clap_name";
 }

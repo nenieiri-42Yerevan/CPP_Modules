@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:54:13 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/27 12:58:32 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:11:31 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ScavTrap ";
 	std::cout << COLOR_GREEN_B;
@@ -35,11 +35,11 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "ScavTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " created.";
 	std::cout << COLOR_END << std::endl;
@@ -49,7 +49,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 {
 	ClapTrap::operator=(other);
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "ScavTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " cloned (assignment operator).";
 	std::cout << COLOR_END << std::endl;
@@ -60,7 +60,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "ScavTrap " << this->_name;
 	std::cout << COLOR_RED_B;
 	std::cout << " dead.";
 	std::cout << COLOR_END << std::endl;
@@ -69,39 +69,39 @@ ScavTrap::~ScavTrap(void)
 void	ScavTrap::guardGate(void) const
 {
 	std::cout << COLOR_YELLOW_B;
-	std::cout << "ScavTrap " << this->getName();
+	std::cout << "ScavTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
 	std::cout << " Gate Keeper mode activated.";
 	std::cout << COLOR_END << std::endl;
 }
 void	ScavTrap::attack(const std::string &target)
 {
-	if (this->getHitPoints() == 0)
+	if (this->_hitPoints == 0)
 	{
 	}
-	else if (this->getEnergyPoints() == 0)
+	else if (this->_energyPoints == 0)
 	{
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ScavTrap " << this->getName();
+		std::cout << "ScavTrap " << this->_name;
 		std::cout << COLOR_RED_B;
 		std::cout << " does not have enough energy to attack> ";
 		std::cout << COLOR_GREEN;
-		std::cout << "Energy: " << this->getEnergyPoints() << ".";
+		std::cout << "Energy: " << this->_energyPoints << ".";
 		std::cout << COLOR_END << std::endl;
 	}
 	else
 	{
-		if (this->getEnergyPoints() < 5)
-			this->setEnergyPoints(0);
+		if (this->_energyPoints < 5)
+			this->_energyPoints = 0;
 		else
-			this->setEnergyPoints(this->getEnergyPoints() - 5);
+			this->_energyPoints = this->_energyPoints - 5;
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ScavTrap " << this->getName();
+		std::cout << "ScavTrap " << this->_name;
 		std::cout << COLOR_BLUE_B;
 		std::cout << " attacks " << target << ", causing ";
 		std::cout << this->getAttackDamage() << " points of damage!";
 		std::cout << COLOR_GREEN;
-		std::cout << " Energy Points: " << this->getEnergyPoints();
+		std::cout << " Energy Points: " << this->_energyPoints;
 		std::cout << COLOR_END << std::endl;
 	}
 }

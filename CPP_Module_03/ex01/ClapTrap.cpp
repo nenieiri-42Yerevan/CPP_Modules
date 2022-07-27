@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:28:00 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/27 12:40:00 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:38:30 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 {
-	this->setName(other.getName());
-	this->setHitPoints(other.getHitPoints());
-	this->setEnergyPoints(other.getEnergyPoints());
-	this->setAttackDamage(other.getAttackDamage());
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage =other._attackDamage;
 	std::cout << COLOR_YELLOW_B;
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << COLOR_GREEN_B;
@@ -117,78 +117,78 @@ unsigned int	ClapTrap::getAttackDamage(void) const
 /* Action functions*/
 void	ClapTrap::attack(const std::string &target)
 {
-	if (this->getHitPoints() == 0)
+	if (this->_hitPoints == 0)
 	{
 	}
-	else if (this->getEnergyPoints() == 0)
+	else if (this->_energyPoints == 0)
 	{
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ClapTrap " << this->getName();
+		std::cout << "ClapTrap " << this->_name;
 		std::cout << COLOR_RED_B;
 		std::cout << " does not have enough energy to attack> ";
 		std::cout << COLOR_GREEN;
-		std::cout << "Energy: " << this->getEnergyPoints() << ".";
+		std::cout << "Energy: " << this->_energyPoints << ".";
 		std::cout << COLOR_END << std::endl;
 	}
 	else
 	{
-		this->setEnergyPoints(this->getEnergyPoints() - 1);
+		this->_energyPoints = this->_energyPoints - 1;
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ClapTrap " << this->getName();
+		std::cout << "ClapTrap " << this->_name;
 		std::cout << COLOR_BLUE_B;
 		std::cout << " attacks " << target << ", causing ";
 		std::cout << this->getAttackDamage() << " points of damage!";
 		std::cout << COLOR_GREEN;
-		std::cout << " Energy Points: " << this->getEnergyPoints();
+		std::cout << " Energy Points: " << this->_energyPoints;
 		std::cout << COLOR_END << std::endl;
 	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->getHitPoints() == 0)
+	if (this->_hitPoints == 0)
 	{
 	}
 	else
 	{
-		if (this->getHitPoints() < amount)
-			amount = this->getHitPoints();
-		this->setHitPoints(this->getHitPoints() - amount);
+		if (this->_hitPoints < amount)
+			amount = this->_hitPoints;
+		this->_hitPoints = this->_hitPoints - amount;
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ClapTrap " << this->getName();
+		std::cout << "ClapTrap " << this->_name;
 		std::cout << COLOR_RED_B;
 		std::cout << " got " << amount << " points of damage!";
 		std::cout << COLOR_GREEN;
-		std::cout << " Hit Points: " <<	this->getHitPoints();
+		std::cout << " Hit Points: " <<	this->_hitPoints;
 		std::cout << COLOR_END << std::endl;
 	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->getHitPoints() == 0)
+	if (this->_hitPoints == 0)
 	{
 	}
-	else if (this->getEnergyPoints() == 0)
+	else if (this->_energyPoints == 0)
 	{
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ClapTrap " << this->getName();
+		std::cout << "ClapTrap " << this->_name;
 		std::cout << COLOR_RED_B;
 		std::cout << " does not have enough energy to be repaired.";
 		std::cout << COLOR_GREEN;
-		std::cout << "Energy: " << this->getEnergyPoints() << ".";
+		std::cout << "Energy: " << this->_energyPoints << ".";
 		std::cout << COLOR_END << std::endl;
 	}
 	else
 	{
-		this->setEnergyPoints(this->getEnergyPoints() - 1);
-		this->setHitPoints(this->getHitPoints() + amount);
+		this->_energyPoints = this->_energyPoints - 1;
+		this->_hitPoints = this->_hitPoints + amount;
 		std::cout << COLOR_YELLOW_B;
-		std::cout << "ClapTrap " << this->getName();
+		std::cout << "ClapTrap " << this->_name;
 		std::cout << COLOR_PURPLE_B;
 		std::cout << " got repaired by " << amount << " points! ";
 		std::cout << COLOR_GREEN;
-		std::cout << "Hit Points: " << this->getHitPoints() << ".";
+		std::cout << "Hit Points: " << this->_hitPoints << ".";
 		std::cout << COLOR_END << std::endl;
 	}
 }

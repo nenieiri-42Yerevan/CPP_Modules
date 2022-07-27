@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 18:18:36 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/24 14:54:46 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:40:22 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ class	ClapTrap
 		unsigned int		getHitPoints(void) const;
 		unsigned int		getEnergyPoints(void) const;
 		unsigned int		getAttackDamage(void) const;
-	private:
+	protected:
 		std::string			_name;
-		int					_hitPoints;
-		int					_energyPoints;
-		int					_attackDamage;
+		unsigned int		_hitPoints;
+		unsigned int		_energyPoints;
+		unsigned int		_attackDamage;
 };
 
 #endif
