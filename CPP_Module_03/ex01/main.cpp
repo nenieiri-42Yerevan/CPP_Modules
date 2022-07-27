@@ -6,18 +6,12 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 10:52:03 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/25 16:36:00 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/26 13:51:05 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "ScavTrap.hpp"
-
-#define COLOR_PURPLE_B "\033[1;35m"
-#define COLOR_YELLOW_B "\033[1;33m"
-#define COLOR_GREEN_B "\033[1;32m"
-#define COLOR_GREEN "\033[0;32m"
-#define COLOR_END "\033[0m"
 
 static void	print_block(ClapTrap &obj)
 {
