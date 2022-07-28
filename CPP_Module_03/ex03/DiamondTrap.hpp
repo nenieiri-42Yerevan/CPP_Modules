@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 11:01:47 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/27 16:12:11 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:40:21 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ class	DiamondTrap : public FragTrap, public ScavTrap
 		void				setNameDiamond(const std::string &name);
 	private:
 		std::string			_name;
+		using				FragTrap::_hitPoints;
+		using				ScavTrap::_energyPoints;
+		using				FragTrap::_attackDamage;
 };
 
 #endif
