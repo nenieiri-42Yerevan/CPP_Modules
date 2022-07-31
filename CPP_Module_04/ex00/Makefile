@@ -6,11 +6,11 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 18:22:24 by vismaily          #+#    #+#              #
-#    Updated: 2022/07/30 18:28:11 by vismaily         ###   ########.fr        #
+#    Updated: 2022/07/31 15:34:38 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= 
+NAME			= animals
 
 SRCS			= $(wildcard *.cpp)
 
@@ -25,16 +25,16 @@ RM				= rm -rf
 all:			$(NAME)
 
 .cpp.o:
-				$(CC) $(CFLAGS) -o $@ -c $<
+				@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS)
+				@$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean all
 
