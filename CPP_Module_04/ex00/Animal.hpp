@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 13:56:42 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/31 15:07:18 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:26:31 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include "MyColors.hpp"
 
 class	Animal
 {
