@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:59:08 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/31 16:39:48 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:58:29 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,17 @@ int	main(void)
 	std::cout << std::endl;
 	delete MyWrongCat;
 	delete MyWrongAnimal;
+
+	std::cout << std::endl;
+	const WrongCat		*RealWrongCat = new WrongCat();
+	std::cout << std::endl;
+	std::cout << COLOR_BLUE_B;
+	std::cout << RealWrongCat->getType() << " " << std::endl;
+	std::cout << COLOR_END;
+	std::cout << std::endl;
+	RealWrongCat->makeSound();
+	std::cout << std::endl;
+	delete RealWrongCat;
 
 	return (0);
 }
