@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:59:08 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 16:19:18 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/01 20:11:38 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int	main(void)
 	std::cout << cat2.getBrain()->getIdea(0) << " - from cat 2" << std::endl;
 	std::cout << COLOR_END;
 	std::cout << std::endl;
+
+	Dog	basic;
+	{
+		Dog	tmp = basic;
+	}
 
 	return (0);
 }

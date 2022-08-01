@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:11:54 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 16:16:23 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/01 20:12:32 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat &other) : Animal(other)
 {
-	_brain = new Brain();
+	delete this->_brain;
+	_brain = new Brain(*(other._brain));
 	std::cout << COLOR_GREEN_B;
 	std::cout << "Copy constructor of " << this->_type << std::endl;
 	std::cout << COLOR_END;

@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:28:21 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 16:17:57 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/01 20:09:33 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
-	_brain = new Brain();
+	delete this->_brain;
+	_brain = new Brain(*(other._brain));
 	std::cout << COLOR_GREEN_B;
 	std::cout << "Copy constructor of " << this->_type << std::endl;
 	std::cout << COLOR_END;
