@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:28:21 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 14:34:16 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/01 16:17:57 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ void	Dog::makeSound(void) const
 	std::cout << COLOR_PURPLE_B;
 	std::cout << "* Bark! *" << std::endl;
 	std::cout << COLOR_END;
+}
+
+Brain	*Dog::getBrain(void) const
+{
+	return (this->_brain);
 }
