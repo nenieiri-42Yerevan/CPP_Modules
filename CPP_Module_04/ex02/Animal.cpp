@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:36:38 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/31 16:30:21 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:54:56 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,6 @@ Animal::~Animal(void)
 {
 	std::cout << COLOR_RED_B;
 	std::cout << "Destructor of Animal" << std::endl;
-	std::cout << COLOR_END;
-}
-
-void	Animal::makeSound(void) const
-{
-	std::cout << COLOR_PURPLE_B;
-	std::cout << "* Animal Sound!!! *" << std::endl;
 	std::cout << COLOR_END;
 }
 
