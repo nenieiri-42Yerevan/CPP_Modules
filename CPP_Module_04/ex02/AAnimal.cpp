@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:36:38 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 19:54:56 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/03 13:08:08 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(void)
+AAnimal::AAnimal(void)
 {
 	std::cout << COLOR_GREEN_B;
 	std::cout << "Default Constructor of Animal" << std::endl;
 	std::cout << COLOR_END;
 }
 
-Animal::Animal(const Animal &other)
+AAnimal::AAnimal(const AAnimal &other)
 {
 	std::cout << COLOR_GREEN_B;
 	std::cout << "Copy constructor of Animal" << std::endl;
@@ -27,7 +27,7 @@ Animal::Animal(const Animal &other)
 	this->_type = other.getType();
 }
 
-Animal	&Animal::operator=(const Animal &other)
+AAnimal	&AAnimal::operator=(const AAnimal &other)
 {
 	std::cout << COLOR_GREEN_B;
 	std::cout << "Copy assignment operator of Animal" << std::endl;
@@ -37,14 +37,14 @@ Animal	&Animal::operator=(const Animal &other)
 	return (*this);
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
 	std::cout << COLOR_RED_B;
 	std::cout << "Destructor of Animal" << std::endl;
 	std::cout << COLOR_END;
 }
 
-const std::string	&Animal::getType(void) const
+const std::string	&AAnimal::getType(void) const
 {
 	return (this->_type);
 }

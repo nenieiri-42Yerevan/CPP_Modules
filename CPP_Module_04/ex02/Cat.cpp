@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:11:54 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 20:10:35 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/03 13:08:48 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat(void)
 	std::cout << COLOR_END;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
 	delete this->_brain;
 	_brain = new Brain(*(other._brain));
@@ -32,7 +32,7 @@ Cat::Cat(const Cat &other) : Animal(other)
 
 Cat	&Cat::operator=(const Cat &other)
 {
-	Animal::operator=(other);
+	AAnimal::operator=(other);
 	delete this->_brain;
 	this->_brain = new Brain();
 	*(this->_brain) = *(other._brain);

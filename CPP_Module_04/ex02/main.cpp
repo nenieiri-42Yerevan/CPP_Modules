@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:59:08 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 20:11:18 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/03 13:10:56 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(void)
 {
-	Animal	*animals[NUMBER];
+	AAnimal	*animals[NUMBER];
 
 	for (int i = 0; i < NUMBER; ++i)
 	{
@@ -41,7 +41,7 @@ int	main(void)
 	std::cout << COLOR_END;
 	std::cout << std::endl;
 
-	//Animal	abstract;
+	//AAnimal	abstract;
 
 	return (0);
 }

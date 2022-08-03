@@ -6,16 +6,16 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 13:58:08 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/01 16:17:27 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/03 13:09:56 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class	Dog : public Animal
+class	Dog : public AAnimal
 {
 	public:
 		Dog(void);
