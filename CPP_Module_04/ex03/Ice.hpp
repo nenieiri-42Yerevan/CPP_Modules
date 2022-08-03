@@ -1,17 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:05:40 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 19:06:33 by vismaily         ###   ########.fr       */
+/*   Created: 2022/08/03 15:30:52 by vismaily          #+#    #+#             */
+/*   Updated: 2022/08/03 15:46:37 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+#ifndef ICE_HPP
+# define ICE_HPP
+
+# include "AMateria.hpp"
+
+class	Ice : public AMateria
 {
-	IMateriaSource	*src = new MateriaSource();
-	return (0);
-}
+	public:
+		Ice(void);
+		Ice(const Ice &other);
+		Ice	&operator=(const Ice &other);
+		~Ice(void);
+	public:
+		AMateria	*clone(void) const;
+		void		use(ICharacter *target);
+};
+
+#endif

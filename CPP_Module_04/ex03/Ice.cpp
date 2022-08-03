@@ -1,17 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:05:40 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 19:06:33 by vismaily         ###   ########.fr       */
+/*   Created: 2022/08/03 15:33:51 by vismaily          #+#    #+#             */
+/*   Updated: 2022/08/03 18:20:59 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+# include "Ice.hpp"
+
+Ice::Ice(void) : AMateria("ice")
 {
-	IMateriaSource	*src = new MateriaSource();
-	return (0);
+}
+
+Ice::Ice(const Ice &other) : AMateria(other)
+{
+}
+
+Ice	&Ice::operator=(const Ice &other)
+{
+	AMateria::operator=(other);
+
+	return (*this);
+}
+
+Ice::~Ice(void)
+{
+}
+
+AMateria	*Ice::clone(void) const
+{
+	return (new Ice(*this));
+}
+
+void	Ice::use(ICharacter *target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

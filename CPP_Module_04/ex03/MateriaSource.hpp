@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:05:40 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 19:06:33 by vismaily         ###   ########.fr       */
+/*   Created: 2022/08/03 19:09:53 by vismaily          #+#    #+#             */
+/*   Updated: 2022/08/03 19:22:25 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
+
+class	IMateriaSource
 {
-	IMateriaSource	*src = new MateriaSource();
-	return (0);
-}
+};
+
+#endif
