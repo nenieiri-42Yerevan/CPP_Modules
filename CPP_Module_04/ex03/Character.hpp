@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 16:02:56 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/04 19:43:22 by vismaily         ###   ########.fr       */
+/*   Created: 2022/08/04 18:24:08 by vismaily          #+#    #+#             */
+/*   Updated: 2022/08/04 19:57:38 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <string>
 # include <iostream>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class	ICharacter;
-
-class	AMateria
+class	Character : public ICharacter
 {
 	public:
-		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(const AMateria &other);
-		AMateria			&operator=(const AMateria &other);
-		virtual				~AMateria(void);
+		Character(void);
+		Character(const std::string &name);
+		Character(const Character &other);
+		Character			&operator=(const Character &other);
+		~Character(void);
 	public:
-		std::string const	&getType(void) const;
-		virtual AMateria	*clone(void) const = 0;
-		virtual void		use(ICharacter &target);
-	protected:
-		std::string			_type;
+		std::string const	&getName(void) const;
+		void				equip(AMateria *m);
+		void				unequip(int idx);
+		void				use(int idx, ICharacter &target);
+	private:
+		std::string			_name;
+		AMateria			*_inventory[4];
+		int					_size;
 };
 
 #endif

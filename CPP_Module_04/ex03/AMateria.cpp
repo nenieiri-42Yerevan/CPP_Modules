@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 13:18:27 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 15:35:46 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:43:22 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ AMateria::AMateria(std::string const &type)
 	_type = type;
 }
 
-AMateria(const AMateria &other)
+AMateria::AMateria(const AMateria &other)
 {
 	this->_type = other._type;
 }
@@ -42,6 +42,7 @@ std::string const	&AMateria::getType(void) const
 	return (this->_type);
 }
 
-void	AMateria::use(ICharacter &target)
+void		AMateria::use(ICharacter &target)
 {
+	(void)target;
 }

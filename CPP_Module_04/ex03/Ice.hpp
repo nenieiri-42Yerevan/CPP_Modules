@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:30:52 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 15:46:37 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:44:52 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Ice : public AMateria
 		~Ice(void);
 	public:
 		AMateria	*clone(void) const;
-		void		use(ICharacter *target);
+		void		use(ICharacter &target);
 };
 
 #endif

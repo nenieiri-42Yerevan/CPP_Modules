@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 15:33:51 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/03 18:20:59 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/04 19:45:40 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ AMateria	*Ice::clone(void) const
 	return (new Ice(*this));
 }
 
-void	Ice::use(ICharacter *target)
+void	Ice::use(ICharacter &target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -6,7 +6,7 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/02 15:43:22 by vismaily          #+#    #+#              #
-#    Updated: 2022/08/02 16:01:31 by vismaily         ###   ########.fr        #
+#    Updated: 2022/08/04 19:16:36 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,16 +25,16 @@ RM				= rm -rf
 all:			$(NAME)
 
 .cpp.o:
-				$(CC) $(CFLAGS) -o $@ -c $<
+				@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS)
+				@$(RM) $(OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean all
 
