@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 19:05:40 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/04 19:56:40 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/05 12:41:07 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int	main(void)
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	Character	*Jhorge = new Character();
+
+	delete Jhorge;
 	delete bob;
 	delete me;
 	delete src;
