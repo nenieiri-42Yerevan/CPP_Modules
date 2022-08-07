@@ -6,53 +6,71 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 13:02:04 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/06 18:16:14 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:30:23 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
-	Bureaucrat	Armenia("Armenia", 15);
-	Bureaucrat	Russia("Russia", 140);
-	Bureaucrat	India("India", 1);
-
-	std::cout << Armenia << std::endl;
-	std::cout << Russia << std::endl;
-	std::cout << India << std::endl;
-
 	try
 	{
-		Bureaucrat	Iran("Iran", 151);
+		Form	f("f1", 0, 1);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
 	try
 	{
-		Bureaucrat	Iraq("Iraq", 0);
+		Form	f("f2", 1, 0);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
 	try
 	{
-		Armenia.increment();
-		Russia.decrement();
+		Form	f("f3", 1, 151);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	std::cout << Armenia << std::endl;
-	std::cout << Russia << std::endl;
+	try
+	{
+		Form	f("f4", 151, 1);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exeption: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		Bureaucrat	b1("B-1", 1);
+		Form		f("F-5", 150, 150);
+
+		std::cout << f << std::endl;
+		b1.signForm(f);
+		std::cout << std::endl << f << std::endl;
+	}
+
+	{
+		Bureaucrat	b2("B-2", 10);
+		Form		f("F-6", 1, 1);
+
+		std::cout << f << std::endl;
+		b2.signForm(f);
+		std::cout << std::endl << f << std::endl;
+	}
 
 	return (0);
 }
