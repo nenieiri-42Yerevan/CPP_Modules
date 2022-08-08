@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 11:55:27 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/07 16:05:33 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:37:09 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,23 @@ void	Bureaucrat::signForm(Form &form) const
 		std::cerr << " because - " << e.what();
 	}
 	std::cout << std::endl;
+}
+
+void	Bureaucrat::executeForm(const Form &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes form " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Form::InvalidFormException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what(void) const throw()

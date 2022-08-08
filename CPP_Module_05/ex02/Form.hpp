@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:25:32 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/07 14:17:26 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:37:20 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ class	Form
 		int					getSignedGrade(void) const;
 		int					getExecGrade(void) const;
 		void				beSigned(const Bureaucrat &b);
+		virtual void		execute(const Bureaucrat &executor) const = 0;
 	private:
 		Form(void);
+	protected:
+		void				check_executor(const Bureaucrat &executor) const;
 	private:
 		const std::string	_name;
 		bool				_signed;
@@ -53,6 +56,11 @@ class	Form
 				virtual const char	*what(void) const throw();
 			private:
 				const char			*_msg;
+		};
+	public:
+		struct	InvalidFormException
+		{
+			virtual const char	*what(void) const throw();
 		};
 };
 

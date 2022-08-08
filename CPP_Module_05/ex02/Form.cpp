@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:27:29 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/07 14:19:35 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:31:47 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,14 @@ void	Form::beSigned(const Bureaucrat &b)
 		throw GradeTooLowException("Bureaucrat is not authorized to sign the form!");
 }
 
+void	Form::check_executor(const Bureaucrat &executor) const
+{
+	if (executor.getGrade() > this->_execGrade)
+		throw GradeTooLowException("Bureaucrat is not authorized to sign");
+	if (!this->_signed)
+		throw InvalidFormException();
+}
+
 std::ostream	&operator<<(std::ostream &stream, const Form &obj)
 {
 	stream << "Form: " << obj.getName() << std::endl;
@@ -109,4 +117,9 @@ Form::GradeTooLowException::GradeTooLowException(const char *msg) :
 const char	*Form::GradeTooLowException::what(void) const throw()
 {
 	return (this->_msg);
+}
+
+const char	*Form::InvalidFormException::what(void) const throw()
+{
+	return ("Not signed forms cannot be executed!");
 }

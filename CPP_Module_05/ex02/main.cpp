@@ -6,71 +6,51 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 13:02:04 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/07 15:30:23 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:39:31 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
-	try
-	{
-		Form	f("f1", 0, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	ShrubberyCreationForm	s1("s1");
+	RobotomyRequestForm		r1("r1");
+	PresidentialPardonForm	p1("p1");
 
-	try
-	{
-		Form	f("f2", 1, 0);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	Bureaucrat				b1("b1", 145);
+	Bureaucrat				b2("b2", 137);
+	Bureaucrat				b3("b3", 1);
 
-	try
-	{
-		Form	f("f3", 1, 151);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	std::cout << b1 << std::endl << b2 << std::endl << b3 << std::endl;
 
-	try
-	{
-		Form	f("f4", 151, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Exeption: " << e.what() << std::endl;
-	}
+	std::cout << std::endl << s1 << std::endl;
+
+	b3.executeForm(s1);
+	b1.signForm(s1);
+	b1.executeForm(s1);
+	b2.executeForm(s1);
+	b3.executeForm(s1);
+	std::cout << s1 << std::endl;
 
 	std::cout << std::endl;
 
-	{
-		Bureaucrat	b1("B-1", 1);
-		Form		f("F-5", 150, 150);
+	std::cout << r1 << std::endl;
+	b2.signForm(r1);
+	b3.signForm(r1);
+	b3.executeForm(r1);
+	b3.executeForm(r1);
+	b3.executeForm(r1);
 
-		std::cout << f << std::endl;
-		b1.signForm(f);
-		std::cout << std::endl << f << std::endl;
-	}
+	std::cout << std::endl;
 
-	{
-		Bureaucrat	b2("B-2", 10);
-		Form		f("F-6", 1, 1);
-
-		std::cout << f << std::endl;
-		b2.signForm(f);
-		std::cout << std::endl << f << std::endl;
-	}
+	std::cout << p1 << std::endl;
+	b3.signForm(p1);
+	b3.executeForm(p1);
 
 	return (0);
 }
