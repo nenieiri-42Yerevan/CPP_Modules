@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:50:20 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/08 13:33:28 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 13:42:57 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Form	*Intern::makeShrubberyCreation(const std::string &target) const
 
 Form	*Intern::makeForm(const std::string &formName, const std::string &target) const
 {
-	Form	*(Intern::*forms[3])(const std::string &) const;
+	Form	*(Intern::*forms[3])(const std::string &target) const;
 
 	forms[0] = &Intern::makePresidentialPardon;
 	forms[1] = &Intern::makeRobotomyRequest;
