@@ -6,11 +6,11 @@
 #    By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/06 11:49:30 by vismaily          #+#    #+#              #
-#    Updated: 2022/08/07 11:23:57 by vismaily         ###   ########.fr        #
+#    Updated: 2022/08/08 13:32:31 by vismaily         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= forms
+NAME			= intern
 
 SRCS			= $(wildcard *.cpp)
 

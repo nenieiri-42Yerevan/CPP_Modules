@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:25:32 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/08 12:37:20 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/08 13:34:57 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Form
 		Form(const Form &other);
 		Form(const std::string &name, int signedGrade, int execGrade);
 		Form				&operator=(const Form &other);
-		~Form(void);
+		virtual				~Form(void);
 	public:
 		const std::string	&getName(void) const;
 		bool				isSigned(void) const;
