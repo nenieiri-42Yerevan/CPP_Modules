@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.hpp                                              :+:      :+:    :+:   */
+/*   MyColors.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 11:37:44 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/09 11:38:32 by vismaily         ###   ########.fr       */
+/*   Created: 2022/07/31 16:24:56 by vismaily          #+#    #+#             */
+/*   Updated: 2022/07/31 16:25:35 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#ifndef	MYCOLORS_HPP
+# define MYCOLORS_HPP
 
-#include "Base.hpp"
-
-class	C : public Base
-{
-};
+# define COLOR_YELLOW_B "\033[1;33m"
+# define COLOR_PURPLE_B "\033[1;35m"
+# define COLOR_BLUE_B "\033[1;34m"
+# define COLOR_GREEN_B "\033[1;32m"
+# define COLOR_GREEN "\033[0;32m"
+# define COLOR_RED_B "\033[1;31m"
+# define COLOR_END "\033[0m"
 
 #endif
