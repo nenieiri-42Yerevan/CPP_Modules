@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 12:02:37 by vismaily          #+#    #+#             */
-/*   Updated: 2022/07/17 17:31:33 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:22:47 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	Karen::complain(std::string level)
 	levels[3] = "error";
 
 	for (int i = 0; i < 4; i++)
-		if (level == levels[0])
+		if (level == levels[i])
 			(this->*func[i])();
 }
 
