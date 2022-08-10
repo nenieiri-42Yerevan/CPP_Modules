@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:21:14 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/09 20:22:28 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/10 11:49:40 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,8 @@ void print_all(int i, float f, double d, int flag)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << i << std::endl;
-	if (f - i == 0)
-	{
-		std::cout << "float: " << f << ".0f" << std::endl;
-		std::cout << "double: " << d << ".0" << std::endl;
-	}
-	else
-	{
-		std::cout << "float: " << std::fixed << std::setprecision(10) << f << "f" << std::endl;
-		std::cout << "double: " << std::fixed << std::setprecision(10) << d << std::endl;
-	}
+	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
 static bool	parse_char(const std::string &str)
