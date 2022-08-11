@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:20:09 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/11 16:18:27 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/11 16:30:46 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ARRAY_HPP
 
 # include <stdexcept>
-# include <iostream>
 
 template	<typename T>
 class		Array
@@ -80,15 +79,8 @@ Array<T>	&Array<T>::operator=(const Array &rhs)
 template	<typename T>
 T			&Array<T>::operator[](unsigned int idx) const
 {
-	try
-	{
-		if (idx < 0 || idx >= this->_size)
-			throw std::range_error("index out of bounds");
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (idx < 0 || idx >= this->_size)
+		throw std::range_error("index out of bounds");
 	return (this->_arr[idx]);
 }
 

@@ -6,12 +6,13 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:20:06 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/11 16:26:13 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/11 16:32:47 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <exception>
 #include "Array.hpp"
 
 int	main()
@@ -47,8 +48,6 @@ int	main()
 	for (unsigned int i = 0; i < arr_1.size(); ++i)
 		std::cout << "arr_1 [" << i << "] = " << arr_1[i] << std::endl;
 
-	std::cout << std::endl << arr_1[arr_1.size()] << std::endl << std::endl;
-
 	Array<std::string>	str_arr(3);
 	str_arr[0] = "Nenie";
 	str_arr[1] = " ";
@@ -60,6 +59,15 @@ int	main()
 	std::cout << "Str: " << line << std::endl;
 
 	delete copy_arr_1;
+
+	try
+	{
+		std::cout << std::endl << arr_1[arr_1.size()] << std::endl << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }
