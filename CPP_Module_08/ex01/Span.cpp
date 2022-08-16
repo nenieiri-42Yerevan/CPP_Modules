@@ -6,7 +6,7 @@
 /*   By: vismaily <nenie_iri@mail.ru>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 15:33:27 by vismaily          #+#    #+#             */
-/*   Updated: 2022/08/15 18:08:34 by vismaily         ###   ########.fr       */
+/*   Updated: 2022/08/15 19:29:16 by vismaily         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Span	&Span::operator=(const Span &other)
 {
 	if (this != &other)
 	{
+		this->_span.clear();
 		this->_span.reserve(other._span.capacity());
 		this->_span = other._span;
 	}
